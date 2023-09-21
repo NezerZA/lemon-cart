@@ -32,6 +32,12 @@ input {
   cursor: pointer;
 }
 
+input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+  accent-color: #ffdd00;
+}
+
 .app {
   width: 100%;
   height: 100vh;
@@ -89,7 +95,33 @@ input {
   color: #ffdd00;
 }
 
+.item button {
+  padding: 0;
+  background: none;
+  margin-left: 1rem;
+}
+
 .list {
-  height: 55vh;
-  background-color: rgb(71, 71, 71);
+  background-color: #818181;
+  color: #ffffff;
+  padding: 4rem 0;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.list ul {
+  list-style: none;
+  width: 80%;
+  margin-left: 10%;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  justify-content: center;
+  align-content: start;
 }

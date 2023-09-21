@@ -3,18 +3,13 @@ import "./App.css";
 
 export default function App() {
   // const [items, setItems] = useState([]);
-  const Items = [{ id: 1, itemName: "apple", quantity: 6 }];
-
-  // const initialItems = [
-  //   { id: 1, description: "Passports", quantity: 2, packed: false },
-  //   { id: 2, description: "Socks", quantity: 12, packed: false },
-  // ];
+  const Items = [{ id: 1, itemName: "Apple", quantity: 6, inCart: false }];
 
   return (
     <div className="app">
       <Header />
       <Insert />
-      <List />
+      <List items={Items} />
       <Footer />
     </div>
   );
@@ -40,16 +35,26 @@ function Insert() {
   );
 }
 
-function List() {
+function List({ items }) {
   return (
-    <ul className="list">
-      <ListItem />
-    </ul>
+    <div className="list">
+      <ul>
+        {items.map((item) => (
+          <ListItem item={item} />
+        ))}
+      </ul>
+    </div>
   );
 }
 
-function ListItem() {
-  return <li className="item">Item</li>;
+function ListItem({ item }) {
+  return (
+    <li className="item">
+      <input type="checkbox" />
+      <span>{item.itemName}</span>
+      <button>❌</button>
+    </li>
+  );
 }
 
 function Footer() {
