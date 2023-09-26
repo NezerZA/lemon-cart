@@ -101,6 +101,11 @@ input[type="checkbox"] {
   margin-left: 1rem;
 }
 
+.item-line {
+  text-decoration: line-through;
+  color: #d6d6d6;
+}
+
 .list {
   background-color: #818181;
   color: #ffffff;
